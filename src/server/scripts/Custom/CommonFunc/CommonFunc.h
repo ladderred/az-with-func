@@ -1,4 +1,4 @@
-﻿extern bool CampAttackStartFlag;
+extern bool CampAttackStartFlag;
 #include "Player.h"
 class CommonFunc
 {
@@ -25,6 +25,7 @@ public:
 	//弹窗
 	void SendAcceptOrCancel(Player* player, uint32 id, std::string text, bool quest = false);
 	bool DoAciotnAfterAccept(Player* player, uint32 id, bool quest = false);
+    void SendLeaderSummon(Player* sender, Player* target);
 
 	//图标及物品链接
 	std::string GetItemIcon(uint32 entry, uint32 width, uint32 height, int x, int y);

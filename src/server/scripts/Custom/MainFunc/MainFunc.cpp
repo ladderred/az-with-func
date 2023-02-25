@@ -618,7 +618,13 @@ public:
 
 	bool OnUse(Player* player, Item* item, SpellCastTargets const& targets) override
 	{
+        if (player->IsInCombat()) //检测使用时是否在战斗中
+            {
+                player->GetSession()->SendAreaTriggerMessage("不能在战斗中使用！！！！");
+                return false;
+            }
 		sMF->AddGossip(player, item, 0);
+
 		return true;
 	}
 
