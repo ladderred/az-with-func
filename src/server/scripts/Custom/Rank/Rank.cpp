@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 #include "Rank.h"
 #include "../CommonFunc/CommonFunc.h"
 #include "../Reward/Reward.h"
@@ -17,7 +17,7 @@ void Rank::Load()
 {
 	RankDataMap.clear();
 	QueryResult result = WorldDatabase.PQuery(sWorld->getBoolConfig(CONFIG_ZHCN_DB) ? 
-		"SELECT µÈ¼¶,Éý¼¶Ðè´ïµ½µÄÖµ,Ãû³Æ,²Ëµ¥ÎÄ±¾,Éý¼¶½±ÀøÄ£°åID,Íæ¼ÒÃû×ÖÇ°×º FROM __×Ô¶¨ÒåµÈ¼¶" :
+		"SELECT ç­‰çº§,å‡çº§éœ€è¾¾åˆ°çš„å€¼,åç§°,èœå•æ–‡æœ¬,å‡çº§å¥–åŠ±æ¨¡æ¿ID,çŽ©å®¶åå­—å‰ç¼€ FROM __è‡ªå®šä¹‰ç­‰çº§" :
 		"SELECT level,meetValue,name,gossipText,rewId,prefix FROM _rank");
 	if (!result) return;
 	do
@@ -53,7 +53,7 @@ std::string Rank::GetName(uint32 level)
 	if (iter != RankDataMap.end())
 		return iter->second.name;
 
-	return "[ÎÞ]";
+	return "[æ— ]";
 }
 
 std::string Rank::GetGosstipText(uint32 level)
@@ -115,14 +115,14 @@ void Rank::Update(Player* player, uint32 value/* = 0*/, bool updateDB/* = false*
 	if (player->rankValue > player->maxRankValue)
 	{
 		player->rankLevel++;
-		ChatHandler(player->GetSession()).PSendSysMessage("|cffFF0000[ÐÞÁ¶ÏµÍ³]|r ½ø½×%s", GetName(player->rankLevel).c_str());
+		ChatHandler(player->GetSession()).PSendSysMessage("|cffFF0000[ä¿®ç‚¼ç³»ç»Ÿ]|r è¿›é˜¶%s", GetName(player->rankLevel).c_str());
 		sRew->Rew(player, GetRewId(player->rankLevel));
 		sMapMod->OnEnterMap(player);
 
 		player->rankValue = player->rankValue - player->maxRankValue;
 		player->maxRankValue = GetMeetValue(player->rankLevel);
 
-		//¸üÐÂÇ°×º
+		//æ›´æ–°å‰ç¼€
 		sCharNameMod->UpdatePrefix(player, GetPrefix(player->rankLevel));
 
 		if (player->rankValue > player->maxRankValue)
@@ -209,6 +209,13 @@ void Rank::Action(Player*player, uint32 action, Object*obj)
 		player->ADD_GOSSIP_ITEM(0, GetGosstipText(action - GOSSIP_ACTION_INFO_DEF), SENDER_RANK, GOSSIP_ACTION_INFO_DEF);
 		player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, obj->GetGUID());
 	}
+}
+
+void Rank::ShowRank(Player* player)
+{
+    std::ostringstream oss;
+    oss << "å½“å‰ç­‰çº§ä¸ºï¼š" << player->rankLevel << "ã€‚\nç»éªŒå€¼ä¸ºï¼š" << player->rankValue << "ã€‚\nè·ç¦»ä¸‹ä¸€çº§è¿˜éœ€è¦ï¼š" << player->maxRankValue - player->rankValue << "ç‚¹ç»éªŒã€‚";
+    ChatHandler(player->GetSession()).SendSysMessage(oss.str().c_str());
 }
 
 class RankScript : PlayerScript

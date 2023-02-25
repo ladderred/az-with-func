@@ -1,4 +1,4 @@
-enum StatLimitTypes
+﻿enum StatLimitTypes
 {
 	LIMIT_ARMOR,
 	LIMIT_DODGE,

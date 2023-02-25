@@ -1,4 +1,4 @@
-//抢答
+﻿//抢答
 #define EVENT_ID_QUICK_RESPONSE					70
 
 //假人更新

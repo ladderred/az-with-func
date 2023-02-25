@@ -33,6 +33,7 @@ public:
 	void SendPacket(Player* player);
 	void AddGossip(Player* player,Object* obj);
 	void Action (Player*player, uint32 action, Object*obj);
+    void ShowRank(Player*player);
 private:
 
 };

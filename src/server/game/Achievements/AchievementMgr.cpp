@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2016+     AzerothCore <www.azerothcore.org>, released under GNU GPL v2 license: https://github.com/azerothcore/azerothcore-wotlk/blob/master/LICENSE-GPL2
  * Copyright (C) 2008-2016 TrinityCore <http://www.trinitycore.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
@@ -2208,6 +2208,10 @@ void AchievementMgr::CompletedAchievement(AchievementEntry const* achievement)
 
     // reward items and titles if any
     AchievementReward const* reward = sAchievementMgr->GetAchievementReward(achievement);
+
+    //新增完成成就奖励物品
+    if (sSwitch->GetValue(ST_ACHIEVEMENT_REW_ITEM))
+        m_player->AddItem(sSwitch->GetValue(ST_ACHIEVEMENT_REW_ITEM), 1);
 
     // no rewards
     if (!reward)

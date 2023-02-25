@@ -1,4 +1,4 @@
-#define FACTION_DUEL 10000
+﻿#define FACTION_DUEL 10000
 #define GUILD_DUEL 20000
 
 enum PvPTypes

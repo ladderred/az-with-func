@@ -38,6 +38,9 @@ bool AntiFarm::GetOnOff()
 
 void AntiFarm::SendCheck(Player* player)
 {
+    //增加免检地图id，后期加入conf
+    if (player->GetAreaId() == 3703)
+        return;
 	player->AntiFarmCount++;
 	player->AntiFarmNum = urand(1, 9);
 

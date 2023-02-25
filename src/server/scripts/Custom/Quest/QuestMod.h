@@ -1,4 +1,4 @@
-#define MAX_QUEST_MOD_REW_COUNT 4
+﻿#define MAX_QUEST_MOD_REW_COUNT 4
 #define MAX_RANDOM_QUEST_COUNT 5
 
 //任务区域传送

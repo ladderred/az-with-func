@@ -1,4 +1,4 @@
-﻿enum SwithTypes
+enum SwithTypes
 {
 	ST_NONE,
 
@@ -95,6 +95,8 @@
 	GVG_136 = 79,
 	GVG_137 = 80,
 	GVG_138 = 81,
+    ST_ACHIEVEMENT_REW_ITEM = 90,
+    ST_CHALLENGE_SWITCH =91,
 
 	ST_SS = 100,				//魂玉开关
 	ST_SSEX = 101,				//魂玉扩展开关

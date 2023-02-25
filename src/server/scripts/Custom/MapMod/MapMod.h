@@ -1,4 +1,4 @@
-
+﻿
 /*
 ALTER TABLE _map ADD ResetOnLeave BOOL DEFAULT FALSE AFTER AddRankValue;
 ALTER TABLE _map CHANGE ChallegeLevel ChallengeLv INT UNSIGNED DEFAULT 0;

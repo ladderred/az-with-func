@@ -1,4 +1,4 @@
-
+﻿
 struct gvgconf
 {
 	uint32 id;

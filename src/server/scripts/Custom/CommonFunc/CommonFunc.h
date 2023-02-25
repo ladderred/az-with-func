@@ -1,5 +1,5 @@
 ﻿extern bool CampAttackStartFlag;
-
+#include "Player.h"
 class CommonFunc
 {
 public:

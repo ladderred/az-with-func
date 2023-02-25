@@ -1,4 +1,4 @@
-﻿#include "Transmogrification.h"
+#include "Transmogrification.h"
 #pragma execution_character_set("utf-8")
 const char * Transmogrification::GetSlotName(uint8 slot, WorldSession* session) const
 {
@@ -96,6 +96,7 @@ bool Transmogrification::PresetTransmog(Player* player, Item* itemTransmogrified
     itemTransmogrified->SetOwnerGUID(player->GetGUID());
     itemTransmogrified->SetNotRefundable(player);
     itemTransmogrified->ClearSoulboundTradeable(player);
+    return true;
 }
 bool Transmogrification::GetEnableSets() const
 {

@@ -1,4 +1,4 @@
-struct CreautreModTemplate
+﻿struct CreautreModTemplate
 {
 	uint32 Entry;
 	uint32 ChallengeLv;

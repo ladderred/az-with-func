@@ -1,4 +1,4 @@
-struct SpellModTemplate
+﻿struct SpellModTemplate
 {
 	uint32 reqId;
 	float dmgMod;

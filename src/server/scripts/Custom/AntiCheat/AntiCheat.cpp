@@ -222,7 +222,7 @@ bool AntiCheat::CheckMovementInfo(Unit* unit, MovementInfo const& movementInfo)
 
 	return false;
 }
-
+//
 void AntiCheat::CheckMovementInfo(Player* pl)
 {
 
@@ -252,10 +252,10 @@ void AntiCheat::CheckMovementInfo(Player* pl)
 		SaveAndNotice(pl, AC_FLY, z);
 		return;
 	}
-	//if (!pl->HasUnitMovementFlag(MOVEMENTFLAG_SWIMMING) && no_fly_auras && !pl->GMFlyON && !pl->HasAuraType(SPELL_AURA_WATER_WALK))
-	//if (pl->m_positionZ - z > 4.8f && !pl->IsInWater() && no_fly_auras)
-	//		if (!pl->GetMap()->IsInWater(pl->m_positionX, pl->m_positionX, z))
-	//			SaveAndNotice(pl, AC_OTHER, z);
+//	//if (!pl->HasUnitMovementFlag(MOVEMENTFLAG_SWIMMING) && no_fly_auras && !pl->GMFlyON && !pl->HasAuraType(SPELL_AURA_WATER_WALK))
+//	//if (pl->m_positionZ - z > 4.8f && !pl->IsInWater() && no_fly_auras)
+//	//		if (!pl->GetMap()->IsInWater(pl->m_positionX, pl->m_positionX, z))
+//	//			SaveAndNotice(pl, AC_OTHER, z);
 }
 
 

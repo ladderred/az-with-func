@@ -532,7 +532,8 @@ void MainFunc::DoAction(Player* pl, Object* obj, uint32 sender, uint32 action)
 		sCustomSkill->AddGossip(pl, obj);
 		break;
 	case MF_RANK:
-		sRank->AddGossip(pl, obj);
+		//sRank->AddGossip(pl, obj);
+        sRank->ShowRank(pl);
 		break;
 	case MF_FACTION:
 		sFaction->AddGossip(pl, obj);
